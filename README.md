@@ -4,7 +4,6 @@
 
 ```
 docker-compose build
-docker-compose run --rm react sh -c "create-react-app ./"
 docker-compose up 
 ```
 
