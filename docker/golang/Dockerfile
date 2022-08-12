@@ -4,8 +4,8 @@ RUN apk add alpine-sdk
 COPY ./go-app /app/go
 WORKDIR /app/go
 RUN apk add --no-cache git 
-RUN go mod init example
-RUN go get github.com/gin-gonic/gin
+RUN apk add bash
+# added
+RUN ls
+RUN go mod download
 CMD go run main.go
-# RUN go build -o main .
-# CMD [ "/app/go/main" ]
