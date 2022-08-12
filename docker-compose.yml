@@ -7,7 +7,7 @@ services:
     container_name: react_container
     tty: true
     volumes:
-      - ./react-app/react-app:/app/react-app
+      - ./react-app:/app/react-app
     command: sh -c "cd /app/react-app && yarn install && yarn start"
     ports:
       - 3000:3000
