@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-
+import App_Calendar from './Calendar';
 
 function ControlledTabsExample() {
     // ここわからん
@@ -19,6 +19,7 @@ function ControlledTabsExample() {
         </Tab>
         <Tab eventKey="calender" title="Calender">
             カレンダー表示
+            <App_Calendar />
         </Tab>
         <Tab eventKey="menu" title="Menu">
             共有メニュー表示
