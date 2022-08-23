@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import { Navbar, Nav} from 'react-bootstrap';
+import ControlledTabsExample from './components/App_tab'
+// import Sonnet from '../../components/Sonnet';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          unkounko
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Navbar.Brand href="#home">TITLE</Navbar.Brand>
+            <Nav>
+              <Navbar.Collapse className='justify-content-end'>
+                <Nav.Link href="#user">
+                  UserName
+                </Nav.Link>
+              </Navbar.Collapse>
+            </Nav>
+            
+          </Container>
+        </Navbar>
       </header>
+      <div>
+        <ControlledTabsExample />
+      </div>
+      {/* tabs書く */}
     </div>
   );
 }
