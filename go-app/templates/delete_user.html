@@ -7,7 +7,7 @@
         <li>作成時間： {{.user.CreatedAt}}</li>
     </ul>
     
-    <form method="post" action="/delete/{{.user.ID}}">
+    <form method="post" action="/delete_user/{{.user.ID}}">
         <p><input type="submit" value="削除"></p>
         <p><a href="/">戻る</a></p>
     </form>

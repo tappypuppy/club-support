@@ -1,0 +1,19 @@
+<body>
+    <h2>イベント追加</h2>
+    <form method="post" action="/new_event">
+        <p>タイトル<input type="text" name="title" size="30" placeholder="入力してください" ></p>
+        <p>タイプ<input type="text" name="types" size="50" placeholder="入力してください" ></p>
+        <p>開始日付<input type="date" name="starttime"></p>
+        <p>終了日付<input type="date" name="endtime"></p>
+        <p><input type="submit" value="Send"></p>
+    </form>
+    <h2>イベント一覧</h2>
+    <ul>
+        {{ range .events }}
+            <li>タイトル：{{ .Title }}、タイプ：{{ .Type }}、開始時間：{{ .StartTime }}、終了時間：{{ .EndTime }}
+                <label><a href="/detail_event/{{.ID}}">編集</a></label>
+                <label><a href="/delete_check_event/{{.ID}}">削除</a></label>
+            </li>
+        {{end}}
+    </ul>
+    </body>
