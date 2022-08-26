@@ -30,13 +30,15 @@ docker-compose up go
 ```
 
 
-メモ
+#### メモ
 React側でGinのREST APIを叩く設定
 1. 以下の拡張機能追加
 https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/related
 2. 有効(cがオレンジの状態)にする
 
-
+- 基本的には別ポート番号にchromeからアクセスすることはセキュリティ上できないらしい
+- この拡張機能を使ってそれを可能にしてるっぽい
+- ユーザー数は世界に10万人以上いるっぽいし、評価もそんなに低くないからおそらく大丈夫
 
 
 
