@@ -2,14 +2,27 @@ import { useCallback } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid"; // pluginは、あとから
 import interactionPlugin,  { DateClickArg } from "@fullcalendar/interaction";
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import Modal from "./Modal"; //Modalコンポーネントをimportする
 
-
-
-
+import axios from "axios";  // GinのREST APIを叩くためのモジュール
 
 function AppCalendar(props) {
+//-------------------------ReactでGinのAPIを叩く方法例-------------
+  // 必要なURLを設定
+  const URL = "http://localhost:8080/detail_user/1";
+  // 取得した値を保存するusestate定義
+  const [user, setUser] = useState(null);
+  // リクエスト
+  useEffect(() => {
+    axios.get(URL).then((response) => {
+      setUser(response.data);
+    });
+    }, []);
+  console.log(user)
+// ----------------------------------------------------------------------
+
+
     const handleDateClick = useCallback((arg: DateClickArg) => {
         // alert(arg.dateStr);
         setShowModal(true);
@@ -47,10 +60,12 @@ function AppCalendar(props) {
 
     
     />
+
+    {/* <h2>{user}さん</h2> */}
     <button onClick={ShowModal}>Open Modal</button>
 
     <Modal showFlag={showModal} setShowModal={setShowModal} content={day} />
-
+  
 
     </>
   );

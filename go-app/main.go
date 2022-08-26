@@ -208,7 +208,8 @@ func main() {
             panic(err)
         }
         user := dbGetOneUser(id)
-        ctx.HTML(200, "detail_user.html", gin.H{"user": user})
+        ctx.JSON(200, gin.H{"user": user})
+        // ctx.HTML(200, "detail_user.html", gin.H{"user": user})
     })
 
     //Update
