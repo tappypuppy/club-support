@@ -28,3 +28,15 @@ Dockerfileの"added"以降のコメントを外す
 docker-compose build
 docker-compose up go
 ```
+
+
+メモ
+React側でGinのREST APIを叩く設定
+1. 以下の拡張機能追加
+https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino/related
+2. 有効(cがオレンジの状態)にする
+
+
+
+
+
