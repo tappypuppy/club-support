@@ -16,9 +16,14 @@ function AppCalendar(props) {
   // リクエスト
   useEffect(() => {
     axios.get(URL).then((response) => {
-      setUser(response.data);
+      setUser(response.data.user.Name);
+      console.log("respnse")
+      console.log(response.data.user.Name)
     });
     }, []);
+
+  console.log("user:")
+  const user_name = String(user);
   console.log(user)
 // ----------------------------------------------------------------------
 
@@ -61,10 +66,12 @@ function AppCalendar(props) {
     
     />
 
-    {/* <h2>{user}さん</h2> */}
+    <h2>{user_name}さん</h2>
     <button onClick={ShowModal}>Open Modal</button>
 
     <Modal showFlag={showModal} setShowModal={setShowModal} content={day} />
+
+    
   
 
     </>
