@@ -22,7 +22,7 @@ function AppCalendar(props) {
     });
     }, []);
 
-  console.log("user:")
+  //stringに型変換する必要あり
   const user_name = String(user);
   console.log(user)
 // ----------------------------------------------------------------------
